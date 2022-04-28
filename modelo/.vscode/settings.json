@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:modelo}/database/database.sqlite",
+            "name": "Produtos"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
