@@ -32,6 +32,6 @@
         <input type="file" name="foto" id="foto">
         <button type="submit" >Enviar</button>
     </form>
-   
+    <a href="/">Retorna</a>
 </body>
 </html>

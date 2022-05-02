@@ -10,18 +10,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+.maiusculo{
+    text-transform: uppercase;
+}
+
+
+
+.card_personalizado{
+    border: 1px solid black;
+    padding:1%; 
+    margin-right:1%;
+    box-shadow: 2px 2px 2px black;
+}
+</style>
 <body style="width: 100%;">
    <section class="container">
-    <div class="row">
+    <div class="row" style="margin-left:15%;">
         @foreach ($resultado as $item)
-        <div class="col-md-3">
-            {{$item->nome}}  
-            
-            <br>
-        <img src="/storage/{{$item->foto}}" width="60%" >
-        </div>
         
-            
+        
+            <div class="col-md-3 text-center mt-2 mb-2 card_personalizado">
+                <div>
+
+                    <p class="mt-5 maiusculo">{{$item->nome}}</p>   
+                
+                        <br>
+                    <img src="/storage/{{$item->foto}}" width="60%" >
+                    <br>
+                        {{$item->descricao}}
+                    <br>
+                   <h3>{{$item->preco}}</h3> 
+              
+
+                </div>
+              
+            </div>
+              
+           
         @endforeach
     </div>
 
