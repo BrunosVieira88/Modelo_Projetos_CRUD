@@ -17,7 +17,13 @@ class ProdutoController extends Controller
         return view('index',compact('resultado'));
     }
 
-    public function guardarAtriz(Request $request){
+    public function retornaCadastro(){
+
+        $resultado = Produto::all();
+        return view('/Produtos/cadastro',compact('resultado'));
+    }
+
+    public function guardaProduto(Request $request){
      
        
         if($request->hasFile('foto')){
