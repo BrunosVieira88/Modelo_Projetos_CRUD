@@ -7,25 +7,25 @@ use App\Http\Controllers\Controller;
 
 class ProdutoController extends Controller
 {
-    public function __construct(){
+    public function __construct()
+    {
         $this->middleware('auth');
     }
 
-    public function retornaIndex(){
-
+    public function retornaIndex()
+    {
         $resultado = Produto::all();
         return view('index',compact('resultado'));
     }
 
-    public function retornaCadastro(){
-
+    public function retornaCadastro()
+    {
         $resultado = Produto::all();
         return view('/Produtos/cadastro',compact('resultado'));
     }
 
-    public function guardaProduto(Request $request){
-     
-       
+    public function guardaProduto(Request $request)
+    {
         if($request->hasFile('foto')){
             $foto = $request->file('foto')->store('/produto');
             $atriz = Produto::create($request->all());
@@ -35,16 +35,14 @@ class ProdutoController extends Controller
         }
         $ERRO ='NÃO FOI POSSIVEL CADASTRAR';
         return view('/Produtos/cadastro',compact('ERRO'));
-       
-
-       
     }
 
-    public function deletarProduto(Request $request){
-             Produto::destroy($request->id);
-             $resultado = Produto::all();
-             $msg = "Produto deletado com Sucesso!";
-            return view('index',compact('resultado','msg'));
+    public function deletarProduto(Request $request)
+    {
+        Produto::destroy($request->id);
+        $resultado = Produto::all();
+        $msg = "Produto deletado com Sucesso!";
+        return view('index',compact('resultado','msg'));
     }
 
     public function editaProduto(int $id, Request $request)
