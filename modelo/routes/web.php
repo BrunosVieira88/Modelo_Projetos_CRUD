@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'ProdutoController@retornaIndex');
-Route::get('/cadastro','ProdutoController@retornaIndex');
+Route::get('/cadastro','ProdutoController@guardarAtriz');
 Route::post('/cadastro/post','ProdutoController@guardarAtriz');
 Route::post('/deletar/produto/{id}','ProdutoController@deletarProduto');
 Route::post('/edita/produto/{id}','ProdutoController@editaProduto');
 Auth::routes();
+Route::get('/teste', 'ProdutoController@teste');
 
-Route::get('/home', 'HomeController@index')->name('home');

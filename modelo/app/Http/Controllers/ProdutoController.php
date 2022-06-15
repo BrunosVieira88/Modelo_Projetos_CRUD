@@ -17,6 +17,13 @@ class ProdutoController extends Controller
         return view('index',compact('resultado'));
     }
 
+    public function teste(){
+
+        $resultado = Produto::all();
+        return view('teste');
+    }
+    
+
     public function guardarAtriz(Request $request){
      
        
